@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css'>
+<link href='../css/style.css' rel='stylesheet' type='text/css'>
+<style type="text/css"></style> 
+<script src="../js/smart-search.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/main.js"></script>
+<div id="mainPopup">
+    <section id="header"> 
+        <div id="close">&#x2717;</div>
+        <input id='main-search' type="search" placeholder="quick search - type here" autofocus/>
+    </section>
+    <section id="image-list">
+        <div id='message'>
+		<div id="hint-box">
+			<div class="hint-box-controls"> 
+			<span class="hint-box-controls-description-1">Quick Search</span>
+			<span class="hint-box-controls-description-2"> 
+				<span class="hint-box-controls-description-highlights">Tips</span> &amp; <span class="hint-box-controls-description-highlights">Tricks</span>
+			</span>
+		</div>
+		<p class="hint">
+			<span data-text='["gallerify","hello-world","winter%20img"]' class="hint-command"></span> - Typing any combination of letters will search for images with URL that contains that combination.
+		</p>
+		<p class="hint">
+			<span data-text='["png","jpg","gif"]' class="hint-command"> </span> - Typing a particular image type shows ony the images of that format.
+		</p>
+		<p class="hint">			
+			<span data-text='["show icons","show wallpapers","show px"]' class="hint-command"> </span> - Quick Search can filter icons, wallpapers and pixes using the following commands: "show icons", "show wallpapers" and "show px".
+		</p>
+		<p class="hint">
+			<span data-text='["200 by 300","400 x 600","128x128"]' class="hint-command"> </span> - Specify the exact image dimensions. 
+		</p>
+		<p class="hint">			
+			<span data-text='["from 100","from 150 x 500","from 20 by 40"]' class="hint-command"> </span> - Typing "from", followed by a number, filters all the images that have width and height, both larger or equal to that number.
+		</p>
+		<p class="hint">			
+			<span data-text='["more than 800","bigger than 50","more than 120 x 240"]' class="hint-command"> </span> - Typing "more than" or "bigger than" followed by a number, filters all the images that have width and height larger but not equal to that number.
+		</p>
+		<p class="hint">			
+			<span data-text='["to 100","to 250 x 250","to 800 by 600"]' class="hint-command"> </span> - Typing "to" followed by a number filters all the images that have width and height, both less or equal to that number.
+		</p>
+		<p class="hint">			
+			<span data-text='["less than 400","smaller than 500","less than 120 x 120","less than 300 by 200"]' class="hint-command"> </span> - Typing "less than" or "smaller than" followed by a number filters all the images that have width and height smaller but not equal to that number.
+		</p>
+		<p class="hint">			
+			<span data-text='["from 600 to 800","from 500 by 600 to 800 by 1200","bigger than 500 and less than 1000"]' class="hint-command"> </span> - And of course, combining "from" and "to" works just as well.
+		</p> 
+		</div>	
+       
+       <div id="bug-box">
+			<div class="hint-box-controls"> 
+			<span class="hint-box-controls-description-1">Report</span>
+			<span class="hint-box-controls-description-2"> 
+				<span class="bugs-box-controls-description-highlights">Bugs</span> &amp; <span class="bugs-box-controls-description-highlights">Issues</span>
+			</span>
+		</div>
+		<p class="hint">
+			Found a bug?&nbsp;&nbsp;Having a problem?<br/>Just let us know and we will get right on them! 
+		</p> 
+        <p class="hint"><a href="https://chrome.google.com/webstore/detail/gallerify-powerful-image/hlmlhalegjopepcnfbnphmpobjkjhdgk/support?utm_source=chrome-ntp-icon" target="_blank" class="bugs-report">Tell the Developer&nbsp;&nbsp;&rsaquo;</a><p>
+		</div>	
+	</div> 
+    </section>
+    <section id="footer">
+        <div id="footer-content">
+            <div id="count">
+                <span class='report'><span id='report-search-title'></span><span id='report-search'></span></span>
+                <span class='report'>total: <span id='report-total'>0</span></span>
+                <span class='report'>broken: <span id='report-broken'>0</span></span> 
+                <span class='report'><a href="http://gallerify.com" id="home" target="_blank">www.gallerify.com</a></span> 
+            </div>
+        </div>
+    </section>
+</div>
+</html>

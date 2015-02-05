@@ -1,0 +1,12 @@
+{
+  "name": "my_extension",
+  "title": "my extension",
+  "id": "jid1-Qf7C3rZmeL1lPA",
+  "description": "",
+  "author": "",
+  "license": "MPL 2.0",
+  "version": "1.2.3",
+  "homepage": "http://someurl.com",
+  "icon": "data/images/64.png",
+  "icon64": "data/images/64.png"
+}
