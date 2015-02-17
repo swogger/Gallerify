@@ -1,26 +1,24 @@
-var Gallerify = function( onChange ){  
-
-    var loadedImages = [];
-    var _listeners = [];
-	var Gallery = this;
-    
-    this.imagesLoaded = function(){};
-        
-	var dispatchEvent = function(data){ 
-	    for(var i = 0; i < _listeners.length; i++){ 
-           _listeners[i](data);
-        }
-        Gallery.imagesLoaded(data); 		
+var Gallerify = function (onChange) {
+    "use strict";
+    var loadedImages = [],
+        listeners = [],
+        Gallery = this;
+    this.imagesLoaded = function () {};
+    var dispatchEvent = function (data) {
+            for (var i = 0; i < listeners.length; i++){
+               listeners[i](data);
+            }
+            Gallery.imagesLoaded(data);
 	}; 
                 
 	this.AddImageListener = function( listener){ 
-		if( typeof listener === "function"){ _listeners.push(listener);}  
+		if( typeof listener === "function"){ listeners.push(listener);}
 	};  
             
 	this.RemoveImageListener = function( listener){ 
 		if(typeof listener !== "function"){ return 0;}
-		for(var j = 0; j < _listeners.length; j++){ 
-		    if(_listeners[j] === listener) _listeners.splice(j, 1);
+		for(var j = 0; j < listeners.length; j++){
+		    if(listeners[j] === listener) listeners.splice(j, 1);
 		}
 	};   
      
@@ -117,4 +115,11 @@ var Gallerify = function( onChange ){
         }
     })(); 
 }
+
+if(unsafeWindow) {
+    exportFunction(function (fnName) {
+        return new Gallerify(unsafeWindow[fnName]);
+    }, unsafeWindow, {defineAs: "GetGallerify"});
+}
+
 console.log("Gallerify loaded!");

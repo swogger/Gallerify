@@ -2,9 +2,9 @@
     "*"
   ],
   "name": "Gallerify - Powerful Image Downloader",
-  "version": "1.5.11",
+  "version": "1.6.11",
   "manifest_version": 2,
-  "description": "Powerful Image Downloader",
+  "description": "",
   "homepage_url": "http://gallerify.com",
   "icons": {
     "16": "images/16.png",
@@ -15,7 +15,7 @@
   },
   "browser_action": {
     "default_icon": "images/32.png",
-    "default_title": "Gallerify - Powerful Image Downloader",
+    "default_title": "Gallerify - the most powerful image downloader",
     "default_popup": "html/main.html"
   },  
   

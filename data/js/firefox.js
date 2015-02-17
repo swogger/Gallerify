@@ -12,8 +12,17 @@ function loadImages(sender){
     });
 };
 
-window.gallery = new Gallerify(function(images){
-     addImages(self.port, images);
-}); 
+function gallerifyCallback(images) {
+	addImages(self.port, images);
+}
+
+if(!window.Gallerify && unsafeWindow.GetGallerify) {
+	exportFunction(gallerifyCallback, unsafeWindow, {defineAs: "gallerifyCallback"});
+	window.gallery = unsafeWindow.GetGallerify("gallerifyCallback");
+} else {
+	window.gallery = new Gallerify(function(images){
+	     addImages(self.port, images);
+	}); 
+}
 
 loadImages(self.port);

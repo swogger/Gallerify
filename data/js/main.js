@@ -1,13 +1,13 @@
 var loadedImages = [];
-if(addon){
+if (window.addon) {
     addon.port.on("message", messageReceived);
     addon.port.on("show", loaded); 
-}else if(window.chrome && window.chrome.extension){ 
+} else if (window.chrome && window.chrome.extension){
     chrome.extension.onMessage.addListener(messageReceived);
 //    else if(safari){}
-}else if(window.addEventListener){
+} else if (window.addEventListener){
       addEventListener("message", messageReceived, false);
-}else{
+} else {
       attachEvent("onmessage", messageReceived);
 }
 
@@ -26,15 +26,23 @@ function chromeScriptInject(){
 }
 
 function firefoxInjectScript() {
+    document.getElementById("download-all").style.display = "none";
+	addon.port.once("js/gallerify.js:loaded", function () {
+		addon.port.emit("executeScript", "js/firefox.js");
+	});
 	addon.port.emit("executeScript", "js/gallerify.js");
-	//addon.port.emit("executeScript", "js/firefox.js");
 }
 
 window.addEventListener("load", loaded);
+ 
+
 function loaded() {
-	loadedImages = []; // cleanup
+    var container = document.getElementById('image-container');
+    var boxes = document.getElementsByClassName('.image-box');
+    container.innerHTML = ""; // cleanup
+    loadedImages = []; // cleanup
 	if(window.chrome && window.chrome.extension){ chromeScriptInject();}
-    else if(addon && addon.port){firefoxInjectScript();}
+    else if(window.addon && window.addon.port ){firefoxInjectScript();}
     else{}
 	var hintBox = document.getElementById("hint-box");  
 	animateCommands(hintBox); 
@@ -42,10 +50,28 @@ function loaded() {
     function closeWindow() {
         window.close(); 
     }
+    document.getElementById('download-all').addEventListener("click", downloadAll);
+} 
+
+function simulateClick(target){
+    if (document.all) {
+        target.click();
+    } else {
+        var evObj = document.createEvent('MouseEvents');
+        evObj.initMouseEvent('click', true, true, window, 1, 12, 345, 7, 220, false, false, true, false, 0, null );
+        target.dispatchEvent(evObj);
+    }
+}
+
+function downloadAll(){
+    var links = document.getElementsByClassName('image-box-controls-link');
+    for(var j = 0 ; j < links.length; j++){
+        window.location.assign(links[j].getAttribute("href"));
+         simulateClick(links[j]);
+    }
 } 
 
 function messageReceived(request, sender) {
-    alert(request);
     request = (request.data)?request.data:request;
 	if ((request.action == "getSource" || request.action == "getChange") && (request.source)){
 		var newImages = JSON.parse(request.source); 
@@ -145,7 +171,7 @@ function imageFailed(div, imageUrl, doc){
 }
 
 function buildImageList(imageArray){
-	var targetElement = document.querySelector('#message'); 
+	var targetElement = document.querySelector('#image-container'); 
 	var uniqueImageArray = imageArray.filter(function(item, pos) { return imageArray.indexOf(item) == pos;});
 	var brokenImageArray = [];
 	var count = uniqueImageArray.length; 

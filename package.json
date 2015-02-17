@@ -1,12 +1,12 @@
 {
-  "name": "my_extension",
-  "title": "my extension",
-  "id": "jid1-Qf7C3rZmeL1lPA",
-  "description": "",
+  "name": "gallerify",
+  "title": "Gallerify - Powerful Image Downloader",
+  "id": "jid1-v9u4LEkWpaAwiQ",
+  "description": "Powerful Image Downloader",
+  "homepage": "http://gallerify.com",
   "author": "",
   "license": "MPL 2.0",
-  "version": "1.2.3",
-  "homepage": "http://someurl.com",
+  "version": "1.6.11",
   "icon": "data/images/64.png",
   "icon64": "data/images/64.png"
 }

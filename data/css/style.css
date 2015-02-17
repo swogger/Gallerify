@@ -71,6 +71,67 @@ div#hint-box, div#bug-box{
 .report{
 	margin-right:10px;
 }
+
+#download-all{ 
+    position:absolute;
+    top:515px;
+    right:26px;
+    width:150px;
+    z-index:19999;
+}
+
+#download-text{
+    display:none;
+    position:relative;
+    top:13px;
+    right:-3px;
+    padding:5px 10px 5px 15px;
+    float:right; 
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
+ 	background: -webkit-linear-gradient(top, #fff ,  #fff); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(top,  #fff ,  #fff); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(top,  #fff ,  #fff); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to top,  #fff ,  #fff); /* Standard syntax */
+    box-shadow: -1px 0px 1px rgba(0,0,0,0.6);
+    cursor:pointer;
+}
+
+#download-icon{
+    float:right;
+    display:block;
+    text-align:center;
+    width:40px;
+    height:40px;
+    border:5px solid #fff; 
+    border-radius:40px;
+    margin:0px;
+ 	background: -webkit-linear-gradient(top, #FF0000 ,  #ff8800); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(top,  #FF0000 ,  #ff8800); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(top,  #FF0000 ,  #ff8800); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to top,  #FF0000 ,  #ff8800); /* Standard syntax */
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    cursor:pointer;
+
+}
+
+#download-all:hover #download-text{
+    display:block;
+}
+
+#download-character{
+    color:white; 
+	line-height:41px;
+    margin-left:5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    font-size:50px;
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+-ms-transform: rotate(90deg);
+-o-transform: rotate(90deg);
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
 .image-url{
 	width:200px;
 	overflow:hidden;
@@ -248,14 +309,14 @@ input:-moz-placeholder { color:#fff;  font-weight:300; font-size:16px;  }
     top:-2px;
     left:0px;
     display:inline-block;
- 	padding:0px 2px 2px 2px; 
+ 	padding:1px 2px 2px 2px; 
     border:2px solid white; 
     border-radius:20px;
 	width:20px;
 	color:white; 
 	line-height:21px;
     font-family: 'Roboto', sans-serif;
-    font-weight:300;
+    font-weight:500;
     font-size:22px;
     text-align:center;
     cursor:pointer;
@@ -264,6 +325,12 @@ input:-moz-placeholder { color:#fff;  font-weight:300; font-size:16px;  }
   	background: -moz-linear-gradient(top,  #f0a000,  #ff0000); /* For Firefox 3.6 to 15 */
   	background: linear-gradient(to top,  #ff0000 ,  #f0a000); /* Standard syntax */
     box-shadow: 1px 1px 6px black;  
+    
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 #close:hover{ 
     border:2px solid #ff5500; 
