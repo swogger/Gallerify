@@ -30,7 +30,7 @@ if(!document.getElementById("gTicket")) {
     });
     gTicket.appendChild(gClose);
     gBox.setAttribute("id","gallerifyWindow");
-    gBox.setAttribute("src","http://gallerify.com/web/html/main.html");
+    gBox.setAttribute("src","http://gallerify.com/web/data/html/main.html");
     gBox.setAttribute("style", "border:1px solid white;width:420px;height:600px;display:inline-block; box-shadow:0px 0px 10px rgba(0,0,0,0.6);");
     gTicket.appendChild(gBox);
     gHandle.setAttribute("id","gHandle");

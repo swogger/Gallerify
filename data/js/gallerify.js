@@ -116,10 +116,10 @@ var Gallerify = function (onChange) {
     })(); 
 }
 
-if(unsafeWindow) {
+if(window.unsafeWindow) {
     exportFunction(function (fnName) {
-        return new Gallerify(unsafeWindow[fnName]);
-    }, unsafeWindow, {defineAs: "GetGallerify"});
+        return new Gallerify(window.unsafeWindow[fnName]);
+    }, window.unsafeWindow, {defineAs: "GetGallerify"});
 }
 
 console.log("Gallerify loaded!");
